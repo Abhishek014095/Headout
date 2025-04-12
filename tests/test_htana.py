@@ -28,4 +28,5 @@ def test_tesxtt():
 
 
     assert citi_list[2]=="Chiang Mai","not matching"
-    assert categories_list[2]=="Thailand","not matching with the citi "
+    assert categories_list[2]=="Thailand","not matching with the cities"
+

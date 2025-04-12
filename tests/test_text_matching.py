@@ -13,9 +13,9 @@ def test_text():
         popup = driver.find_element(By.XPATH, "//span[@class='close-btn']")
         popup.click()
         time.sleep(2)
-        print("✅ Popup closed")
+        print(" Popup closed")
     except:
-        print("⚠️ Popup not found")
+        print(" Popup not found")
 
 
     driver.execute_script("window.scrollBy(0, 3000)")
@@ -31,7 +31,6 @@ def test_text():
 
     for heading, expected_desc in expected_data.items():
         try:
-
             heading_element = driver.find_element(By.XPATH, f"//h6[normalize-space()='{heading}']")
             actual_heading = heading_element.text.strip()
 
@@ -48,3 +47,8 @@ def test_text():
             print(f"Error in checking '{heading}': {e}")
 
     driver.quit()
+
+
+
+
+
