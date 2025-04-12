@@ -35,7 +35,7 @@ def test_text():
             heading_element = driver.find_element(By.XPATH, f"//h6[normalize-space()='{heading}']")
             actual_heading = heading_element.text.strip()
 
-            
+
             paragraph_element = heading_element.find_element(By.XPATH, "following::p[1]")
             actual_paragraph = paragraph_element.text.strip()
 
