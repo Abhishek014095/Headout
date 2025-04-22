@@ -3,6 +3,9 @@ import pytest
 import time
 from utilities.BaseClass import BaseClass
 from pageObjects.date_e2e import date_e22e
+from datetime import datetime
+
+today_date=str(datetime.today().day)
 
 class Testone(BaseClass):
 
@@ -23,8 +26,8 @@ class Testone(BaseClass):
 
         for Date in Dates:
             aria_label = Date.get_attribute("aria-label")
-            if aria_label == "12":
-                print("Date 12 found, clicking....")
+            if aria_label == today_date:
+                print(f"Date {today_date} found,clicking")
                 Date.click()
                 time.sleep(4)
                 break

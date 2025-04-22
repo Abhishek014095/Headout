@@ -20,7 +20,10 @@ def test_text():
 
     driver.execute_script("window.scrollBy(0, 3000)")
     time.sleep(3)
-
+    # kal isko try krna hai
+    #
+    # element = driver.find_element(By.XPATH, "//div[@id='target']")
+    # driver.execute_script("arguments[0].scrollIntoView(true);", element)
 
     expected_data = {
         "High-Quality Materials:": "Our office furniture is made from premium materials, ensuring durability and longevity.",
@@ -42,6 +45,8 @@ def test_text():
             assert actual_heading == heading, "Heading match nahi ho rahi bhai"
             assert actual_paragraph == expected_desc, "Paragraph match nahi ho raha bhai"
             print("Match hogaya bhai!")
+
+
 
         except Exception as e:
             print(f"Error in checking '{heading}': {e}")

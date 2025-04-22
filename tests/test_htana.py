@@ -12,10 +12,20 @@ def test_tesxtt():
     driver=webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.get("https://www.headout.com/")
     driver.maximize_window()
-    time.sleep(2)
+    time.sleep(5)
+
+    try:
+        pop_up=driver.find_element(By.XPATH,"//*[name()='path' and contains(@d,'M13.333 2.')]")
+        pop_up.click()
+        time.sleep(3)
+
+    except Exception as f:
+        print(f"popup not found")
+
 
     driver.find_element(By.XPATH,"//input[@id='universal-search-input']").click()
     time.sleep(2)
+
     cities=driver.find_elements(By.XPATH,"//span[@class='notranslate search-result-name']")
     categories=driver.find_elements(By.XPATH,"//div[@class='searchResults__ResultsItem-sc-1a4zqdo-1 ABoWu']//div//span[2]")
     citi_list=[]
@@ -30,3 +40,4 @@ def test_tesxtt():
     assert citi_list[2]=="Chiang Mai","not matching"
     assert categories_list[2]=="Thailand","not matching with the cities"
 
+print("Done")
