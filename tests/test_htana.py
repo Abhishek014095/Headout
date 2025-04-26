@@ -12,7 +12,6 @@ def test_tesxtt():
     driver=webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.get("https://www.headout.com/")
     driver.maximize_window()
-    time.sleep(5)
 
     try:
         pop_up=driver.find_element(By.XPATH,"//*[name()='path' and contains(@d,'M13.333 2.')]")
